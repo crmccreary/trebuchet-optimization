@@ -1,0 +1,194 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(0.0, 0.0, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(0.07171, 
+    0.07171, 0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(-0.7071, 
+    -0.7071, 0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByOffset(point=
+    mdb.models['Model-1'].rootAssembly.datums[2], vector=(0.0, -0.21, 0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByOffset(point=
+    mdb.models['Model-1'].rootAssembly.datums[3], vector=(1.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[1])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[2])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[3])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[4])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[5])
+mdb.models['Model-1'].ImplicitDynamicsStep(application=TRANSIENT_FIDELITY, 
+    initialConditions=ON, initialInc=0.001, maxNumInc=1000, minInc=5e-07, name=
+    'Step-1', nlgeom=ON, nohaf=OFF, previous='Initial', timePeriod=5.0)
+mdb.models['Model-1'].rootAssembly.WirePolyLine(mergeWire=OFF, meshable=OFF, 
+    points=((mdb.models['Model-1'].rootAssembly.referencePoints[6], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[7]), (
+    mdb.models['Model-1'].rootAssembly.referencePoints[6], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[8]), (
+    mdb.models['Model-1'].rootAssembly.referencePoints[8], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[10]), (
+    mdb.models['Model-1'].rootAssembly.referencePoints[7], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[9])))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.edges.getSequenceFromMask(('[#f ]', ), )
+    , name='Wire-1-Set-1')
+del mdb.models['Model-1'].rootAssembly.features['Wire-1']
+mdb.models['Model-1'].rootAssembly.deleteFeatures(('RP-2', 'RP-3', 'RP-4', 
+    'RP-5'))
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[2])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.referencePoints[13])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[4])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[3])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.referencePoints[16])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[5])
+mdb.models['Model-1'].rootAssembly.WirePolyLine(mergeWire=OFF, meshable=OFF, 
+    points=((mdb.models['Model-1'].rootAssembly.referencePoints[6], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[13]), (
+    mdb.models['Model-1'].rootAssembly.referencePoints[13], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[14]), (
+    mdb.models['Model-1'].rootAssembly.referencePoints[14], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[15]), (
+    mdb.models['Model-1'].rootAssembly.referencePoints[6], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[16]), (
+    mdb.models['Model-1'].rootAssembly.referencePoints[16], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[17]), (
+    mdb.models['Model-1'].rootAssembly.referencePoints[17], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[18])))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.edges.getSequenceFromMask(('[#3f ]', ), 
+    ), name='Wire-1-Set-2')
+mdb.models['Model-1'].ConnectorSection(name='hinge', rotationalType=ROTATION, 
+    translationalType=JOIN)
+mdb.models['Model-1'].ConnectorSection(assembledType=BEAM, name='beam')
+mdb.models['Model-1'].rootAssembly.SectionAssignment(region=Region(
+    edges=mdb.models['Model-1'].rootAssembly.edges.getSequenceFromMask(mask=(
+    '[#2d ]', ), )), sectionName='beam')
+mdb.models['Model-1'].rootAssembly.SectionAssignment(region=Region(
+    edges=mdb.models['Model-1'].rootAssembly.edges.getSequenceFromMask(mask=(
+    '[#12 ]', ), )), sectionName='hinge')
+mdb.models['Model-1'].rootAssembly.WirePolyLine(mergeWire=OFF, meshable=OFF, 
+    points=((None, mdb.models['Model-1'].rootAssembly.referencePoints[6]), ))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.edges.getSequenceFromMask(('[#1 ]', ), )
+    , name='Wire-2-Set-1')
+mdb.models['Model-1'].rootAssembly.SectionAssignment(region=Region(
+    edges=mdb.models['Model-1'].rootAssembly.edges.getSequenceFromMask(mask=(
+    '[#1 ]', ), )), sectionName='hinge')
+mdb.models['Model-1'].rootAssembly.engineeringFeatures.PointMassInertia(alpha=
+    0.0, composite=0.0, mass=10.0, name='CW', region=Region(referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[15], )))
+mdb.models['Model-1'].rootAssembly.engineeringFeatures.PointMassInertia(alpha=
+    0.0, composite=0.0, mass=0.1, name='Projectile', region=Region(
+    referencePoints=(mdb.models['Model-1'].rootAssembly.referencePoints[18], 
+    )))
+mdb.models['Model-1'].Gravity(comp2=-9.81, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', name='gravity')
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.edges.getSequenceFromMask(('[#1 ]', ), )
+    , name='axle')
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.edges.getSequenceFromMask(('[#20 ]', ), 
+    ), name='CW_hinge')
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.edges.getSequenceFromMask(('[#4 ]', ), )
+    , name='Sling_hinge')
+mdb.models['Model-1'].HistoryOutputRequest(createStepName='Step-1', frequency=1
+    , name='Axle_hinge', rebar=EXCLUDE, region=
+    mdb.models['Model-1'].rootAssembly.sets['axle'], sectionPoints=DEFAULT, 
+    variables=('CTF1', 'CTF2', 'CTF3', 'CTM1', 'CTM2', 'CTM3', 'CU1', 'CU2', 
+    'CU3', 'CUR1', 'CUR2', 'CUR3'))
+mdb.models['Model-1'].HistoryOutputRequest(name='CW_hinge', objectToCopy=
+    mdb.models['Model-1'].historyOutputRequests['Axle_hinge'], toStepName=
+    'Step-1')
+mdb.models['Model-1'].historyOutputRequests['CW_hinge'].setValues(region=
+    mdb.models['Model-1'].rootAssembly.sets['CW_hinge'])
+mdb.models['Model-1'].HistoryOutputRequest(name='Sling_hinge', objectToCopy=
+    mdb.models['Model-1'].historyOutputRequests['CW_hinge'], toStepName=
+    'Step-1')
+mdb.models['Model-1'].historyOutputRequests['Sling_hinge'].setValues(region=
+    mdb.models['Model-1'].rootAssembly.sets['Sling_hinge'], useGlobal=OFF)
+mdb.models['Model-1'].historyOutputRequests['CW_hinge'].setValues(useGlobal=
+    OFF)
+mdb.models['Model-1'].historyOutputRequests['Axle_hinge'].setValues(useGlobal=
+    OFF)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Trebuchet', nodalOutputPrecision=SINGLE, 
+    numCpus=1, queue=None, scratch='', type=ANALYSIS, userSubroutine='', 
+    waitHours=0, waitMinutes=0)
+# Save by mccreary on Sun Aug 19 21:06:24 2012
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-1', 
+    region=Region(referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[6], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[13], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[14], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[15], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[16], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[17], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[18], )), u1=UNSET, u2=
+    UNSET, u3=SET, ur1=SET, ur2=SET, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.engineeringFeatures.PointMassInertia(alpha=
+    0.0, composite=0.0, i11=0.001, i22=0.001, i33=0.001, mass=0.001, name=
+    'small', region=Region(referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[6], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[14], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[17], )))
+mdb.models['Model-1'].rootAssembly.engineeringFeatures.inertias['CW'].setValues(
+    i11=0.001, i22=0.001, i33=0.001)
+mdb.models['Model-1'].rootAssembly.engineeringFeatures.inertias['Projectile'].setValues(
+    i11=0.001, i22=0.001, i33=0.001)
+# Save by mccreary on Sun Aug 19 21:11:13 2012
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].steps['Step-1'].setValues(alpha=DEFAULT, application=
+    MODERATE_DISSIPATION, initialConditions=OFF, nohaf=OFF)
+mdb.models['Model-1'].steps['Step-1'].setValues(maxInc=0.001)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=1)
+# Save by mccreary on Sun Aug 19 21:17:08 2012
