@@ -99,15 +99,33 @@ Optimization using Scipy
 Calculation of range
 ++++++++++++++++++++
 
+* Assume projectile release occurs when sling and beam are colinear
+* This will occur when the beam is at some angle :math:`\theta`
+
+  * The angle of the tangential velocity vector from horizontal is also :math:`\theta`
+
+Calculation of range
+++++++++++++++++++++
+
+.. image:: assets/ProjectileRange.jpg
+
+Calculation of range
+++++++++++++++++++++
+
+The range is then calculated from
+
 .. math::
 
-    \psi(r) = e^{-2r}
+    d = \frac{v \cos \theta}{g}\left( v \sin \theta + \sqrt{v^2 \sin^2 \theta + 2 g y _0}\right)
+
+where
 
 .. math::
 
    \begin{eqnarray}
-      y    & = & ax^2 + bx + c \\
-      f(x) & = & x^2 + 2xy + y^2
+      v    & = & \mbox{Velocity magnitude}\\
+      g    & = & \mbox{Gravity}\\
+      y_0  & = & \mbox{Height of projectile at release}
    \end{eqnarray}
 
 Abaqus finite element simulation
@@ -115,14 +133,7 @@ Abaqus finite element simulation
 
 .. raw:: html
 
-        <object width="480" height="385"><param name="movie"
-        value="http://www.youtube.com/v/SBqYZ3KdAUc&hl=en_US&fs=1&rel=0"></param><param
-        name="allowFullScreen" value="true"></param><param
-        name="allowscriptaccess" value="always"></param><embed
-        src="http://www.youtube.com/v/SBqYZ3KdAUc&hl=en_US&fs=1&rel=0"
-        type="application/x-shockwave-flash" allowscriptaccess="always"
-        allowfullscreen="true" width="480"
-        height="385"></embed></object>
+         <object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/UpppHpe-Qvs?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/UpppHpe-Qvs?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
 Range vs Variable Permutations
 ++++++++++++++++++++++++++++++

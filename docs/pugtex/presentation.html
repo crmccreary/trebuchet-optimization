@@ -435,30 +435,44 @@ ul.auto-toc {
 </div>
 <div class="slide" id="calculation-of-range">
 <h1>Calculation of range</h1>
+<ul class="simple">
+<li>Assume projectile release occurs when sling and beam are colinear</li>
+<li>This will occur when the beam is at some angle <span class="math">
+\(\theta\)</span>
+<ul>
+<li>The angle of the tangential velocity vector from horizontal is also <span class="math">
+\(\theta\)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="slide" id="id2">
+<h1>Calculation of range</h1>
+<img alt="assets/ProjectileRange.jpg" src="assets/ProjectileRange.jpg" />
+</div>
+<div class="slide" id="id3">
+<h1>Calculation of range</h1>
+<p>The range is then calculated from</p>
 <div class="math">
 \begin{equation*}
-\psi(r) = e^{-2r}
+d = \frac{v \cos \theta}{g}\left( v \sin \theta + \sqrt{v^2 \sin^2 \theta + 2 g y _0}\right)
 \end{equation*}
 </div>
+<p>where</p>
 <div class="math">
 \begin{equation*}
 \begin{eqnarray}
-   y    &amp; = &amp; ax^2 + bx + c \\
-   f(x) &amp; = &amp; x^2 + 2xy + y^2
+   v    &amp; = &amp; \mbox{Velocity magnitude}\\
+   g    &amp; = &amp; \mbox{Gravity}\\
+   y_0  &amp; = &amp; \mbox{Height of projectile at release}
 \end{eqnarray}
 \end{equation*}
 </div>
 </div>
 <div class="slide" id="abaqus-finite-element-simulation">
 <h1>Abaqus finite element simulation</h1>
-<object width="480" height="385"><param name="movie"
-value="http://www.youtube.com/v/SBqYZ3KdAUc&hl=en_US&fs=1&rel=0"></param><param
-name="allowFullScreen" value="true"></param><param
-name="allowscriptaccess" value="always"></param><embed
-src="http://www.youtube.com/v/SBqYZ3KdAUc&hl=en_US&fs=1&rel=0"
-type="application/x-shockwave-flash" allowscriptaccess="always"
-allowfullscreen="true" width="480"
-height="385"></embed></object></div>
+<object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/UpppHpe-Qvs?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/UpppHpe-Qvs?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object></div>
 <div class="slide" id="range-vs-variable-permutations">
 <h1>Range vs Variable Permutations</h1>
 </div>
@@ -507,7 +521,7 @@ N = \frac{m}{s^2}kg
 \end{equation*}
 </div>
 </div>
-<div class="slide" id="id2">
+<div class="slide" id="id4">
 <h1>sympy - Needs Work</h1>
 <ul>
 <li><p class="first">At present, there does not seem to be a very good way to convert the symbolic results to python code</p>
