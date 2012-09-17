@@ -231,6 +231,11 @@ where
       y_0  & = & \mbox{Height of projectile at release}
    \end{eqnarray}
 
+Calculation of range
+++++++++++++++++++++
+
+The preceding is valid for the moon, mars, or anywhere with negligible air resistance such as high school physics textbooks. With drag, the range will be a lot less and the maximum range is achieved with a much shallower angle. See the notebook `Range_with_drag` for a more realistic treatment.
+
 Optimization Sequence
 +++++++++++++++++++++
 
