@@ -17,11 +17,69 @@ Presenter
   * But mainly a structural engineer, stress and thermal analyst
 
 
-Why?
-++++
+Projects
+++++++++++++++++
 
-* I wanted a demonstration project to verify that we could replace MathCad with the ipython notebook
+Offshore wind turbine foundations
 
+.. image:: assets/P1020232.jpg
+   :align: center
+
+Projects
+++++++++++++++++
+
+LED lighting
+
+.. image:: assets/IMG_2760.jpg
+   :align: center
+
+Projects
+++++++++++++++++
+
+Hoover-Diana Topsides
+
+.. image:: assets/diana.jpg
+   :scale: 80%
+   :align: center
+
+
+Projects
+++++++++++++++++
+
+Chips
+
+.. image:: assets/images2003_npfritostax.jpg
+   :align: center
+
+What do any of these projects have to with Python?
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. class:: incremental
+
+* Significant data processing is required
+* Parametrization
+* Generating reports
+* Building analysis tools
+
+Engineering Notebooks
++++++++++++++++++++++
+
+.. image:: assets/591px-Top_right_Prime_screengrab.png
+   :align: right
+
+.. class:: incremental
+
+* Engineers need to document their calculations
+* The available tools are expensive
+* And, being proprietary, not very flexible
+* I like Mathematica and barely tolerate MathCAD, but I was looking for a replacement
+
+Why a trebuchet?
+++++++++++++++++
+
+.. class:: incremental
+
+* We needed a demonstration project to verify that we could replace MathCad with the ipython notebook
 * It would be fun
 
 Trebuchets and medieval siege weapons
@@ -31,44 +89,52 @@ A trebuchet is a medieval siege weapon that combines two ancient weapons, the tr
 
 Essentially it is a triple pendulum:
 
+.. class:: incremental
+
 1. A hinge at the counterweight pendulum and beam
-
 2. A hinge at the axle
-
 3. A hinge at the sling and beam
 
 Trebuchets and medieval siege weapons
 +++++++++++++++++++++++++++++++++++++
 
 .. image:: assets/350px-Trebuchet_Castelnaud.jpg
-
+   :align: center
+   :scale: 150%
 
 Or not so medieval 
 ++++++++++++++++++
 
 .. image:: assets/drug_trebuchet.jpg
+   :align: center
+   :scale: 130%
 
 Mechanics of a Trebuchet
 ++++++++++++++++++++++++
 
-I have borrowed heavily from 
+References:
 
 `Modern Siege Weapons: Mechanics of the Trebuchet <http://online.redwoods.cc.ca.us/instruct/darnold/deproj/sp05/bshawn/presentation.pdf>`_
+
+`Algorithmic Beauty of the Trebuchet <http://www.algobeautytreb.com/trebmath35.pdf>`_
 
 See-saw Idealization
 ++++++++++++++++++++
 
 .. image:: assets/seesaw.jpg
+   :align: center
 
 Hinged Counterweight Idealization
 +++++++++++++++++++++++++++++++++
 
 .. image:: assets/TrebuchetMotion_1.jpg
+   :align: center
 
 Hinged Counterweight with Sling Idealization
 ++++++++++++++++++++++++++++++++++++++++++++
 
 .. image:: assets/TrebuchetMotion_2.jpg
+   :align: center
 
 Tool Chain
 ++++++++++
@@ -118,6 +184,7 @@ Optimization using Scipy and Abaqus
 +++++++++++++++++++++++++++++++++++
 
 .. image:: assets/500px-Logistic-curve.svg.png
+   :align: center
 
 Optimization using Scipy and Abaqus
 +++++++++++++++++++++++++++++++++++
@@ -143,6 +210,7 @@ Calculation of range
 ++++++++++++++++++++
 
 .. image:: assets/ProjectileRange.jpg
+   :align: center
 
 Calculation of range
 ++++++++++++++++++++
@@ -170,7 +238,7 @@ Optimization Sequence
 2. A `jinja2` template is used for the input file
 3. The parameters are rendered onto the template
 4. The objective function, calculation of the range, is performed
-5. `cobyla` does it's stuff, checks the parameters against the constraint functions
+5. `cobyla` does its stuff, checks the parameters against the constraint functions
 6. Rinse and repeat until the tolerances on the changes in the parameters are met
 
 Abaqus finite element simulation
@@ -183,4 +251,8 @@ Abaqus finite element simulation
 Range vs Variable Permutations
 ++++++++++++++++++++++++++++++
 
+Calculated efficiency: 46.6%
+
 .. image:: assets/optimization_results.jpg
+   :align: center
+   :scale: 140%
